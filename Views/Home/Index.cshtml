@@ -1,0 +1,37 @@
+﻿@model CalculatorApp.Models.Calculator
+
+@{
+    ViewData["Title"] = "Calulator";
+}
+<form asp-action="Index">
+    <div class="text-center">
+        <h1 class="display-4 text-">Calculator</h1>
+        <div class="container border" >
+            <h4>Inputs</h4>
+                <input type="number" asp-for="value1">
+                <input type="number" asp-for="value2">
+            
+            <h4 class="mt-3">Operations</h4>
+            <div class="container">
+                <div class="align-self-center">
+                    <button class="btn btn-info" type="submit" value="+" name="operation">+</button>
+                    <button class="btn btn-danger" type="submit" value="-" name="operation">-</button>
+                    <button class="btn btn-warning" type="submit" value="x" name="operation">x</button>
+                    <button class="btn btn-primary" type="submit" value="/" name="operation">/</button>
+                </div>
+
+                <div class="align-self-center mt-2">
+                    <button class="btn btn-secondary" type="submit" value="Sqrt" name="operation">Sqrt</button>
+                    <button class="btn btn-secondary" type="submit" value="Pow" name="operation">Pow</button>
+                    <button class="btn btn-secondary" type="submit" value="Sin" name="operation">Sin</button>
+                    <button class="btn btn-secondary" type="submit" value="Cos" name="operation">Cos</button>
+                    <button class="btn btn-secondary" type="submit" value="Tan" name="operation">Tan</button>   
+                </div>
+            </div>
+
+            <h4 class="mt-3">Result</h4>
+            <input class="mb-3" type="number" disabled="true" asp-for="@ViewData["result"]"/>   
+            
+        </div>
+    </div>
+</form>
